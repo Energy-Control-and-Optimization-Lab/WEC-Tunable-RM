@@ -1,0 +1,3 @@
+ECO-Lab parametrization study on a 2-bodies WEC
+-This folder contain the set of script Phyton-based to exectute the Design of Experiment (DoE) method applied in this research.
+-The scripts are created to be executed in order.
