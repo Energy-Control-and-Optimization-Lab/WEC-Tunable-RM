@@ -23,10 +23,10 @@ PTO-Modelling/
 │   └── wecSimInputFile.m
 │
 └── SD/                              # Spring-Damper (passive baseline)
-    ├── ECO_RM_WEC_SD.slx
-    ├── userDefinedFunctions.m
-    ├── wecSimInputFile.m
-    └── MECC2026_Tunable_WEC_PTO.pdf  # Conference paper
+│   ├── ECO_RM_WEC_SD.slx
+│   ├── userDefinedFunctions.m
+│   ├── wecSimInputFile.m
+└── MECC2026_Tunable_WEC_PTO.pdf  # Conference paper
 ```
 
 > **Note:** `geometry/` and `hydroData/` are shared across all three PTO models. The hydrodynamic data was computed with [Capytaine](https://capytaine.github.io/) (open-source BEM solver) and stored in HDF5 (`.h5`) format.
