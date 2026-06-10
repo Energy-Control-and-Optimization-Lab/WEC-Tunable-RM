@@ -83,7 +83,7 @@ Wave conditions used for all models: T = 1.57 s, H = 0.32 m (regular waves, 120 
 
 | Release | Branch | Description | Publication |
 |---------|--------|-------------|-------------|
-| `v1.0` | `main` | RM3 parametric hydrodynamic sweep (24 configurations) | IDETC 2026 |
+| `v1.0` | `RM3` | RM3 parametric hydrodynamic sweep (24 configurations) | IDETC 2026 |
 | `v2.0` | `DOE` | Multi-objective design optimization pipeline | *Renewable Energy* (under review) |
 | `v3.0` | `PTO-Modelling` | Time-domain PTO comparison (SD, DDLG, EGEC) | MECC 2026 |
 
