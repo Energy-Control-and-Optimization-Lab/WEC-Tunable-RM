@@ -17,7 +17,7 @@ This repository contains the full research pipeline for the **hydrodynamic analy
 
 ## Repository Branches
 
-### `main` — Reference Model 3 (RM3) Parametric Analysis
+### Numerical Model Reference Model 3 (RM3)
 
 > 📄 *Full paper: `IDETC_2026_Tunable_RM_Pablo.pdf`*
 
