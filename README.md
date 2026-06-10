@@ -468,10 +468,6 @@ Units: [m/m] for translations, [rad/m] for rotations
 
 If you use this repository, please cite:
 
-> Matamala *et al.*, "Tunable WEC PTO Modelling," *Proceedings of MECC 2026*.
-
-The full paper is available at `IDETC_2026_Tunable_RM_Pablo.pdf`.
-
 If this package helps your research, please cite:
 
 ```bibtex
@@ -483,6 +479,8 @@ If this package helps your research, please cite:
   url = {https://github.com/Energy-Control-and-Optimization-Lab/Parametrization-Design}
 }
 ```
+
+The full paper is available at `IDETC_2026_Tunable_RM_Pablo.pdf`.
 
 ---
 
