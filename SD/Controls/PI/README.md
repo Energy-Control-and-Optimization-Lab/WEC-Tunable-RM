@@ -130,3 +130,46 @@ repository through:
 
 - `passive_vs_PI_summary.csv`
 - `report_figures/`
+
+## PI Controller Design Reproduction
+
+The frequency-domain controller design and analysis used to develop the PI
+controller are retained in this directory so that the design process can be
+reproduced independently of the final WEC-Sim implementation.
+
+### Plant Analysis
+
+Run
+
+`Plant_analysis.m`
+
+to analyze the uncompensated WEC plant used for controller design. This script
+contains the plant-level frequency-domain analysis used before PI compensation.
+
+### Compensated-Loop Analysis
+
+Run
+
+`Compensated_loop_analysis.m`
+
+to reproduce the compensated-loop analysis for the selected PI controller,
+including the frequency-domain and closed-loop characteristics used to evaluate
+the design.
+
+The corresponding controller-design figures are stored in
+
+`PI_Controller_Analysis_Figures/`
+
+and include:
+
+- `Gu_bode_omega4.png`
+- `Gu_pole_zero_map.png`
+- `Gu_root_locus_uncompensated.png`
+- `PI_compensated_bode_nominal.png`
+- `PI_compensated_nyquist_nominal.png`
+- `PI_compensated_root_locus.png`
+- `PI_sensitivity_complementary_sensitivity.png`
+
+Together, `Plant_analysis.m`, `Compensated_loop_analysis.m`, and the retained
+analysis figures document the design path from the uncompensated plant to the
+final PI controller used in the WEC-Sim/Simulink model.
