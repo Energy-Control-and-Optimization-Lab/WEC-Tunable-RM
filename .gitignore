@@ -1,0 +1,13 @@
+# MATLAB / Simulink generated files
+*.slxc
+*.autosave
+*.asv
+slprj/
+
+# WEC-Sim generated run artifacts
+SD/Controls/PI/output/
+SD/Controls/PI/simulation.log
+
+# Large PI simulation result files
+SD/Controls/PI/Results/PI_run_ramped.mat
+SD/Controls/PI/Results/passive_SD_run.mat

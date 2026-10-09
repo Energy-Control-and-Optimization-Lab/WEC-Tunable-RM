@@ -1,3 +1,35 @@
+%% File Paths
+% Location of this PI controller folder:
+% SD/Controls/PI
+piDir = fileparts(mfilename('fullpath'));
+
+% Go up two levels:
+% PI -> Controls -> SD
+sdDir = fileparts(fileparts(piDir));
+
+% Shared SD files
+hydroFile = fullfile(sdDir, ...
+    'hydroData', ...
+    'ECO_RM_WEC.h5');
+
+floatGeometry = fullfile(sdDir, ...
+    'geometry', ...
+    'float.stl');
+
+sparGeometry = fullfile(sdDir, ...
+    'geometry', ...
+    'spar.stl');
+
+% Verify that the required shared files exist
+assert(isfile(hydroFile), ...
+    'Hydrodynamic file not found: %s', hydroFile);
+
+assert(isfile(floatGeometry), ...
+    'Float geometry file not found: %s', floatGeometry);
+
+assert(isfile(sparGeometry), ...
+    'Spar geometry file not found: %s', sparGeometry);
+
 %% Simulation Data
 simu = simulationClass();
 simu.simMechanicsFile = 'ECO_RM_WEC_SD_PI.slx';
@@ -14,8 +46,8 @@ waves.height = 0.32;    % [m]  wave amplitude eta = 0.16 m
 
 %% Body Data
 % Float
-body(1)                 = bodyClass('hydroData/ECO_RM_WEC.h5');
-body(1).geometryFile    = 'geometry/float.stl';
+body(1) = bodyClass(hydroFile);
+body(1).geometryFile = floatGeometry;
 body(1).mass            = 'equilibrium';
 body(1).inertia         = [1 1 1];
 B_float                 = zeros(6,6);               % [N·s/m] heave-heave viscous damping on spar
@@ -25,8 +57,8 @@ body(1).linearDamping   = B_float;
 % body(1).quadDrag.area   = [0 0 pi*(0.35)^2 0 0 0]; % ajusta D al tuyo
 
 % Spar/Plate
-body(2)                 = bodyClass('hydroData/ECO_RM_WEC.h5');
-body(2).geometryFile    = 'geometry/spar.stl';
+body(2) = bodyClass(hydroFile);
+body(2).geometryFile = sparGeometry;
 body(2).mass            = 'equilibrium';
 body(2).inertia         = [1 1 1];
 B_spar                  = zeros(6,6);               % [N·s/m] heave-heave viscous damping on spar
@@ -34,7 +66,6 @@ B_spar(3,3)             = 257.64;               % [N·s/m] heave-heave viscous d
 body(2).linearDamping   = B_spar;
 % body(2).quadDrag.cd     = [0 0 2.8 0 0 0];
 % body(2).quadDrag.area   = [0 0 pi*(0.5)^2 0 0 0]; % ajusta D al tuyo
-
 
 %% Constraints
 constraint(1) = constraintClass('Constraint1');
