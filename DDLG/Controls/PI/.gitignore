@@ -1,0 +1,20 @@
+# Large local WEC-Sim datasets used for validation/plot comparisons
+DDLG_PI_controlled_final.mat
+DDLG_passive_baseline.mat
+
+# Generated simulation output
+output/
+output_data/
+simulation.log
+
+# Base WEC files already stored under DDLG/
+geometry/
+hydroData/
+
+# MATLAB / Simulink generated cache
+slprj/
+*.slxc
+
+# Python cache
+__pycache__/
+*.pyc
